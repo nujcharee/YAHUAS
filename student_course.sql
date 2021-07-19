@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jul 19, 2021 at 09:36 PM
+-- Generation Time: Jul 19, 2021 at 09:39 PM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 8.0.6
 
@@ -24,18 +24,12 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `course`
+-- Table structure for table `student_course`
 --
 
-CREATE TABLE `course` (
-  `course_no` varchar(6) NOT NULL,
-  `course_title` varchar(100) NOT NULL,
-  `course_instructor` varchar(100) NOT NULL,
-  `instructor_telno` varchar(11) NOT NULL,
-  `instructor_email` varchar(11) NOT NULL,
-  `room_no` varchar(3) NOT NULL,
-  `dept_name` varchar(100) NOT NULL,
-  `dept_telno` varchar(11) NOT NULL
+CREATE TABLE `student_course` (
+  `student_id` varchar(10) NOT NULL,
+  `course_no` varchar(6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -43,10 +37,22 @@ CREATE TABLE `course` (
 --
 
 --
--- Indexes for table `course`
+-- Indexes for table `student_course`
 --
-ALTER TABLE `course`
-  ADD PRIMARY KEY (`course_no`);
+ALTER TABLE `student_course`
+  ADD PRIMARY KEY (`student_id`,`course_no`),
+  ADD KEY `course_no` (`course_no`);
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `student_course`
+--
+ALTER TABLE `student_course`
+  ADD CONSTRAINT `student_course_ibfk_1` FOREIGN KEY (`student_id`) REFERENCES `student` (`student_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `student_course_ibfk_2` FOREIGN KEY (`course_no`) REFERENCES `course` (`course_no`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

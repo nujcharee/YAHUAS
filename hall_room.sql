@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jul 19, 2021 at 09:36 PM
+-- Generation Time: Jul 19, 2021 at 09:38 PM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 8.0.6
 
@@ -24,18 +24,14 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `course`
+-- Table structure for table `hall_room`
 --
 
-CREATE TABLE `course` (
-  `course_no` varchar(6) NOT NULL,
-  `course_title` varchar(100) NOT NULL,
-  `course_instructor` varchar(100) NOT NULL,
-  `instructor_telno` varchar(11) NOT NULL,
-  `instructor_email` varchar(11) NOT NULL,
-  `room_no` varchar(3) NOT NULL,
-  `dept_name` varchar(100) NOT NULL,
-  `dept_telno` varchar(11) NOT NULL
+CREATE TABLE `hall_room` (
+  `room_no` varchar(6) NOT NULL,
+  `monthly_rent_rate` float NOT NULL,
+  `place_no` varchar(16) NOT NULL,
+  `hall_no` varchar(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -43,10 +39,23 @@ CREATE TABLE `course` (
 --
 
 --
--- Indexes for table `course`
+-- Indexes for table `hall_room`
 --
-ALTER TABLE `course`
-  ADD PRIMARY KEY (`course_no`);
+ALTER TABLE `hall_room`
+  ADD PRIMARY KEY (`room_no`),
+  ADD KEY `hall_no` (`hall_no`),
+  ADD KEY `place_no` (`place_no`);
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `hall_room`
+--
+ALTER TABLE `hall_room`
+  ADD CONSTRAINT `hall_room_ibfk_1` FOREIGN KEY (`hall_no`) REFERENCES `hall` (`hall_no`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `hall_room_ibfk_2` FOREIGN KEY (`place_no`) REFERENCES `lease` (`place_no`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

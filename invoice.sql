@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jul 19, 2021 at 09:36 PM
+-- Generation Time: Jul 19, 2021 at 09:38 PM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 8.0.6
 
@@ -24,18 +24,16 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `course`
+-- Table structure for table `invoice`
 --
 
-CREATE TABLE `course` (
-  `course_no` varchar(6) NOT NULL,
-  `course_title` varchar(100) NOT NULL,
-  `course_instructor` varchar(100) NOT NULL,
-  `instructor_telno` varchar(11) NOT NULL,
-  `instructor_email` varchar(11) NOT NULL,
-  `room_no` varchar(3) NOT NULL,
-  `dept_name` varchar(100) NOT NULL,
-  `dept_telno` varchar(11) NOT NULL
+CREATE TABLE `invoice` (
+  `invoice_no` varchar(14) NOT NULL,
+  `lease_no` varchar(10) NOT NULL,
+  `semester` varchar(50) NOT NULL,
+  `pay_due` float NOT NULL,
+  `student_id` varchar(10) NOT NULL,
+  `pay_date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -43,10 +41,23 @@ CREATE TABLE `course` (
 --
 
 --
--- Indexes for table `course`
+-- Indexes for table `invoice`
 --
-ALTER TABLE `course`
-  ADD PRIMARY KEY (`course_no`);
+ALTER TABLE `invoice`
+  ADD PRIMARY KEY (`invoice_no`),
+  ADD KEY `lease_no` (`lease_no`),
+  ADD KEY `student_id` (`student_id`);
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `invoice`
+--
+ALTER TABLE `invoice`
+  ADD CONSTRAINT `invoice_ibfk_1` FOREIGN KEY (`lease_no`) REFERENCES `lease` (`lease_no`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `invoice_ibfk_2` FOREIGN KEY (`student_id`) REFERENCES `student` (`student_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jul 19, 2021 at 09:36 PM
+-- Generation Time: Jul 19, 2021 at 09:38 PM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 8.0.6
 
@@ -24,18 +24,15 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `course`
+-- Table structure for table `inspection`
 --
 
-CREATE TABLE `course` (
-  `course_no` varchar(6) NOT NULL,
-  `course_title` varchar(100) NOT NULL,
-  `course_instructor` varchar(100) NOT NULL,
-  `instructor_telno` varchar(11) NOT NULL,
-  `instructor_email` varchar(11) NOT NULL,
-  `room_no` varchar(3) NOT NULL,
-  `dept_name` varchar(100) NOT NULL,
-  `dept_telno` varchar(11) NOT NULL
+CREATE TABLE `inspection` (
+  `staff_no` varchar(4) NOT NULL,
+  `flat_no` varchar(2) NOT NULL,
+  `inspect_date` date NOT NULL,
+  `satisfy_yn` varchar(1) NOT NULL,
+  `comment` varchar(500) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -43,10 +40,22 @@ CREATE TABLE `course` (
 --
 
 --
--- Indexes for table `course`
+-- Indexes for table `inspection`
 --
-ALTER TABLE `course`
-  ADD PRIMARY KEY (`course_no`);
+ALTER TABLE `inspection`
+  ADD PRIMARY KEY (`staff_no`,`flat_no`,`inspect_date`),
+  ADD KEY `flat_no` (`flat_no`);
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `inspection`
+--
+ALTER TABLE `inspection`
+  ADD CONSTRAINT `inspection_ibfk_1` FOREIGN KEY (`staff_no`) REFERENCES `staff` (`staff_no`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `inspection_ibfk_2` FOREIGN KEY (`flat_no`) REFERENCES `flat` (`flat_no`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
