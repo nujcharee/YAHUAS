@@ -1,0 +1,98 @@
+<html>
+    <head>
+            <script>
+                    function validateForm() {
+                      let x = document.forms["addStudent"]["fname"].value;
+                      if (x == "") {
+                        alert("Name must be filled out");
+                        return false;
+                      }
+                    }
+                    </script>
+                    </head>
+                    <body>
+
+<link rel="stylesheet" href="uni.css">
+<form name="addStudent", method="post" action="add_record.php">
+
+<center>
+<h2>Student details:</h2>
+
+<table style="width:30%">
+        <tr>
+          <th>Title:</th>
+          <th><input type="text" name="stu_title" /></th> 
+        </tr>
+        <tr>
+          <th>First Name:</th>
+          <th><input type="text" name="stu_fname" /></th> 
+        </tr>
+        <tr>
+            <th>Last Name:</th>
+            <th><input type="text" name="stu_sname" /></th>
+        </tr>
+
+        <tr>
+                <th>Gender: </th>
+                <th><input type="radio" name="stu_gender" value="F">Female
+                <input type="radio" name="stu_gender" value="M">Male</th>
+        </tr>
+        <tr>
+                <th>Category: </th>
+                <th><select name="category">
+<option value="first-year undergraduate">First Year undergraduate
+<option value="postgraduate">Postgraduate
+<option value="PhD">PhD
+</select></th></tr>
+</table>
+<p></p>
+<h2>Student address:</h2>
+
+
+<table style="width:30%">
+        <tr>
+          <th>Address:</th>
+          <th><input type="text" name="stu_addr1" /></th>
+        </tr>
+        <tr>
+        <th>Postcode:</th>
+        <th><input type="text" name="stu_postcode" /></th>
+        </tr>
+        <th>Date of birth: </th>
+        <th><input type="date" name="dob"/></th>
+        </tr>
+</table>
+<p></p>
+<h2>Next of kin details:</h2>
+<table style="width:30%">
+        <tr>
+          <th>Name:</th>
+          <th><input type="text" name="next_of_kin_name" /></th>
+          </tr>
+        <tr>
+            <th>Relationship:</th>
+            <th><input type="text" name="next_of_kin_rel" /></th> 
+        </tr>
+        <tr>
+            <th>Address: </th>
+            <th><input type="text" name="next_of_kin_addr" /></th>
+        </tr>
+        <tr>
+            <th>Contact Number:</th>
+            <th><input type="text" name="next_of_kin_telno" /></th>
+        </tr>
+        <tr>
+            <th>Email:</th>
+        <th><input type="text" name="next_of_kin_email" /></th>
+        <th><input type="submit"></th>
+        </tr>
+
+</form>
+</table>
+</center>
+
+
+
+
+</html>
+
