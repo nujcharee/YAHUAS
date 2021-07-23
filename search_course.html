@@ -1,0 +1,29 @@
+<html>
+<head>
+<title>Request data from form</title>
+<link rel="stylesheet" href="uni.css">
+</head>
+<center>
+<h1>Search for courses</h1>
+<body>
+<form id=”frm_course” method="POST" action="search_course.php">
+    <label for="cars">Search Column: </label>
+    <select id="cars" name="cars">
+      <option value="course_no">Course No.</option>
+      <option value="course_title">Course title</option>
+      <option value="course_instructor">Instructor Name</option>
+    </select>
+    <select id="operator" name="operator">
+      <option value="contains">contains</option>
+      <option value="equal">is</option>
+    </select>
+    <input type="text" id="testname" name="testname" />
+        <input type="submit" value="Submit" name="Submit">
+  </form>
+</form>
+<hr>
+        Copyright &copy; YAHUAS || 
+         <a href="main.html">Main Menu</a>|| <a href="logout.php?logout">Log-out</a>
+</center>
+</body>
+</html>

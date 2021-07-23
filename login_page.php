@@ -12,7 +12,7 @@ $count = mysqli_num_rows($result);
 
 
 if($count == 1){  
-    header('Location: https://www.google.com/');
+    header('Location: main.html');
 }  
 else{  
     echo "<h1> Login failed. Invalid username or password.</h1>";  

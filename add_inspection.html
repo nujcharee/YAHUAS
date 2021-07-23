@@ -1,0 +1,46 @@
+<html>  
+<body>
+
+<link rel="stylesheet" href="uni.css">
+<form name="addInspection", method="post" action="add_inspect.php">
+
+<center>
+<h2>Add a new inspection:</h2>
+
+<table style="width:30%">
+    <tr>
+    <th>Staff No: </th> 
+    <th><input type="text" name="staff_no" /></th> 
+  </tr>
+        <tr>
+          <th>Flat No:</th>
+          <th><input type="text" name="flat_no" /></th> 
+        </tr>
+        <tr>
+          <th>Inspection date:</th>
+          <th><input type="date" name="inspect_date" /></th> 
+        </tr>
+
+        <tr>
+         <th>Satisfy?: </th>
+         <th><select name="satisfy_yn">
+        <option value="Yes">Yes
+        <option value="No">No
+        </select></th></tr>
+        
+        <tr>
+        <th></th>
+        <th><textarea name="comment" rows="10" cols="30">Comments</textarea></th>
+               </tr>
+        <tr>
+            <th></th>
+            <th><input type="submit"></th>
+        </tr>
+</table>
+
+        <hr>
+                Copyright &copy; YAHUAS || 
+                 <a href="main.html">Main Menu</a>|| <a href="logout.php?logout">Log-out</a>
+        </center>
+</html>
+

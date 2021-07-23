@@ -1,0 +1,65 @@
+<html>
+    <head>
+            <script>
+                    function validateForm() {
+                      let x = document.forms["addStudent"]["fname"].value;
+                      if (x == "") {
+                        alert("Name must be filled out");
+                        return false;
+                      }
+                    }
+                    </script>
+                    </head>
+                    <body>
+
+<link rel="stylesheet" href="uni.css">
+<form name="addLease", method="post" action="add_lease.php">
+
+<center>
+<h2>Lease Details:</h2>
+
+<table style="width:30%">
+    <tr>
+    <th>Student Number: </th>
+    <th><input type="text" name="student_id" /></th> 
+  </tr>
+        <tr>
+          <th>Student ID:</th>
+          <th><input type="text" name="student_id" /></th> 
+        </tr>
+        <tr>
+          <th>Accomodation Type: </th>
+          <th><input type="radio" name="accom_type" value="Hall">Hall of Residence
+            <input type="radio" name="accom_type" value="Apt">Apartment</th>   </tr>
+        <tr>
+            <th>Place No:</th>
+            <th><input type="text" name="place_no" /></th>
+        </tr>
+
+        <tr>
+            <th>Flat / Hall No: </th>
+            <th><input type="text" name="flat_or_hall_no" /></th>    
+        </tr>
+        <tr>
+            <th>Date Move in: </th>
+            <th><input type="date" name="date_enter" /></th>    
+        </tr>
+        <tr>
+            <th>Date Move out: </th>
+            <th><input type="date" name="date_leave" /></th>    
+        </tr>
+                
+</table>
+
+</form>
+
+<hr>
+                Copyright &copy; YAHUAS || 
+                 <a href="main.html">Main Menu</a>|| <a href="logout.php?logout">Log-out</a>
+</center>
+
+
+
+
+</html>
+

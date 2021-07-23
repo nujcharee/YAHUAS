@@ -1,0 +1,47 @@
+<html>
+<body>
+
+<link rel="stylesheet" href="uni.css">
+<form name="addInvoice", method="post" action="add_invoice.php">
+
+<center>
+<h2>Invoice Details:</h2>
+
+<table style="width:30%">
+        <tr>
+          <th>Invoice Number:</th>
+          <th><input type="text" name="invoice_no" /></th> 
+        </tr>
+        <tr>
+          <th>Lease Number: </th>
+          <th><input type="text" name="lease_no" /></th>
+        <tr>
+            <th>Semester:</th>
+            <th><select name="semester">
+                    <option value="1">First Semester
+                    <option value="2">Second Semester
+                    <option value="3">Summer Semester
+                    </select></th></tr> </tr>
+
+        <tr>
+            <th>Pay Due: </th>
+            <th><input type="date" name="pay_due" /></th>    
+        </tr>
+        <tr>
+            <th></th>
+            <th><input type="submit"></th>
+        </tr>
+</table>
+
+</form>
+
+<hr>
+                Copyright &copy; YAHUAS || 
+                 <a href="main.html">Main Menu</a>|| <a href="logout.php?logout">Log-out</a>
+</center>
+
+
+
+
+</html>
+

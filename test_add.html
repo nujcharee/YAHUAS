@@ -1,0 +1,34 @@
+<html>
+    <head>
+            <script>
+                    function validateForm() {
+                      let x = document.forms["addStudent"]["title"].value;
+                      if (x == "") {
+                        alert("Name must be filled out");
+                        return false;
+                      }
+                    }
+                    </script>
+                    </head>
+                    <body>
+
+<link rel="stylesheet" href="uni.css">
+<form name="addStudent", method="post" action="add.php">
+
+<center>
+<h2>Student details:</h2>
+
+<table style="width:30%">
+        <tr>
+          <th>Title:</th>
+          <th><input type="text" name="title" /></th> 
+          <input type="submit">
+        </tr>
+</table>
+</center>
+
+
+
+
+</html>
+

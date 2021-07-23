@@ -1,0 +1,40 @@
+<html>
+    
+<body>
+
+<link rel="stylesheet" href="uni.css">
+<form name="addFlat", method="post" action="add_flat.php">
+
+<center>
+<h2>Add a new flat:</h2>
+
+<table style="width:30%">
+    <tr>
+    <th>Flat No (e.g A1): </th>
+    <th><input type="text" name="flat_no" maxlength="2"/></th> 
+  </tr>
+        <tr>
+          <th>Address:</th>
+          <th><input type="text" name="address" maxlength="100"/></th> 
+        </tr>
+        <tr>
+          <th>Postcode:</th>
+          <th><input type="text" name="postcode" maxlength="6"/></th> 
+        </tr>
+        <tr>
+            <th>Number of beds (1-5):</th>
+            <th><input type="number" name="num_of_bed" min="1" max="5"/></th>
+        </tr>
+
+                <th></th>
+                <th><input type="submit"></th>
+                </tr>
+            
+</table>
+
+        <hr>
+                Copyright &copy; YAHUAS || 
+                 <a href="main.html">Main Menu</a>|| <a href="logout.php?logout">Log-out</a>
+        </center>
+</html>
+
