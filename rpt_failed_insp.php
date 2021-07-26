@@ -19,38 +19,27 @@ if (!$rs)
 }
 
 
-echo ('<link rel="stylesheet" href="bitnami.css">');
 echo ("<table border='1'>");	//set up a table for the results
-echo ("<tr><td>Student ID</td>");
-echo ("<td>Student Title</td>");
-echo ("<td>Student First name</td>");
-echo ("<td>Student Last name</td>");
-echo ("<td>Category</td>");
-echo ("<td>Date of birth</td>");
-echo ("<td>Course No.</td>");
-echo ("<td>Status</td></tr>");
+echo ("<tr><td><b>Inspection ID</b></td>");
+echo ("<td><b>Inspection Date</b></td>");
+echo ("<td><b>Flat No.</b></td>");
+echo ("<td><b>Comment</b></td></tr>");
 
 $found =0;
 
 while ($row=mysqli_fetch_assoc($rs))	//loop through all the records returned
 	{
 	$found=1;			//set variable because records found
-	$student_id=$row['student_id'];
-	$stu_title=$row['stu_title'];
-	$stu_fname=$row['stu_fname'];
-   $stu_sname=$row['stu_sname'];
-   $category=$row['category'];
-   $dob=$row['dob'];
-   $course_no=$row['course_no'];
-   $status=$row['status'];
-	echo ("<tr><td>".$student_id."</td>");      //put data in table
-   echo ("<td>".$stu_title."</td>"); 
-   echo ("<td>".$stu_fname."</td>"); 
-   echo ("<td>".$stu_sname."</td>"); 
-   echo ("<td>".$category."</td>"); 
-   echo ("<td>".$dob."</td>");
-   echo ("<td>".$course_no."</td>");
-   echo ("<td>".$status."</td></tr>");
+	$inspection_id=$row['inspection_id'];
+	$inspect_date=$row['inspect_date'];
+	$flat_no=$row['flat_no'];
+   $comment=$row['comment'];
+
+	echo ("<tr><td>".$inspection_id."</td>");      //put data in table
+   echo ("<td>".$inspect_date."</td>"); 
+   echo ("<td>".$flat_no."</td>"); 
+   echo ("<td>".$comment."</td></tr>"); 
+
 	}
 echo ("</table>");			//finish table
 if ($found==0) {			//print message if no data found
