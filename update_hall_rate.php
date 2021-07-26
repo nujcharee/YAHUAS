@@ -2,16 +2,16 @@
 <html>
     <head><link rel="stylesheet" href="uni.css">
     </head>
-
 <?php
-$studentname = $_REQUEST ['studentname'];
-$course = $_REQUEST ['course'];
-echo "$studentname";
-echo "$course";
-$conn=mysqli_connect('localhost','root','','YAHUAS');
-$sql="UPDATE Students SET course='$course' WHERE studentname='$studentname'"; 
 
-echo $sql;
+$room_no  = $_REQUEST['room_no'];
+$hall_no  = $_REQUEST['hall_no'];
+$monthly_rent_rate  = $_REQUEST['monthly_rent_rate'];
+
+$conn=mysqli_connect('localhost','root','','YAHUAS');
+$sql="UPDATE hall_room SET monthly_rent_rate = '$monthly_rent_rate' 
+WHERE room_no = '$room_no' AND hall_no  = '$hall_no'"; 
+
 if (mysqli_query($conn,$sql)) {
 	echo "Record updated";
 	}

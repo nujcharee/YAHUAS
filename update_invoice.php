@@ -2,16 +2,12 @@
 <html>
     <head><link rel="stylesheet" href="uni.css">
     </head>
-
 <?php
-$studentname = $_REQUEST ['studentname'];
-$course = $_REQUEST ['course'];
-echo "$studentname";
-echo "$course";
-$conn=mysqli_connect('localhost','root','','YAHUAS');
-$sql="UPDATE Students SET course='$course' WHERE studentname='$studentname'"; 
 
-echo $sql;
+$conn=mysqli_connect('localhost','root','','YAHUAS');
+$sql="UPDATE invoice SET paid_date = current_date()
+WHERE paid_date = '0000-00-00'"; 
+
 if (mysqli_query($conn,$sql)) {
 	echo "Record updated";
 	}

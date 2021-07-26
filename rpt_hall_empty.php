@@ -2,13 +2,13 @@
 <body>
 
 <center>
-   <h1> Report: Vacant Flat Rooms</h1>
+   <h1> Report: Vacant Hall Rooms</h1>
 <?php
 $conn=mysqli_connect('localhost','root','','YAHUAS');
 
 
-$sql="SELECT * FROM empty_flat"; 
-$sql2="SELECT * FROM flat_lost_revenue"; 
+$sql="SELECT * FROM empty_hall"; 
+$sql2="SELECT * FROM hall_lost_revenue"; 
 
 if (mysqli_connect_errno())
    {
@@ -21,13 +21,12 @@ if (!$rs)
 	die("Could not get data ");
 }
 
-echo ("<h2>Possible lost of revenue.</h2>");
+echo ("<h2>Possible lost of revenue</h2>");
 echo ("<table border='1'>");	//set up a table for the results
 echo ("<tr><td>Room No.</td>");
 echo ("<td>Rent rate</td>");
 echo ("<td>Place No</td>");
-echo ("<td>Flat No.</td>");
-echo ("<td>Smoking Room</td></tr>");
+echo ("<td>Hall No.</td>");
 
 $found =0;
 
@@ -35,16 +34,14 @@ while ($row=mysqli_fetch_assoc($rs))	//loop through all the records returned
 	{
 	$found=1;			//set variable because records found
 	$room_no=$row['room_no'];
-	$month_rent_rate=$row['month_rent_rate'];
+	$monthly_rent_rate=$row['monthly_rent_rate'];
 	$place_no=$row['place_no'];
-   $flat_no=$row['flat_no'];
-    $smoking_room_yn=$row['smoking_room_yn'];
+    $hall_no=$row['hall_no'];
    
 	echo ("<tr><td>".$room_no."</td>");      //put data in table
-   echo ("<td>".$month_rent_rate."</td>"); 
+   echo ("<td>".$monthly_rent_rate."</td>"); 
    echo ("<td>".$place_no."</td>"); 
-   echo ("<td>".$flat_no."</td>"); 
-   echo ("<td>".$smoking_room_yn."</td></tr>"); 
+   echo ("<td>".$hall_no."</td>"); 
 
 	}
 echo ("</table>");			//finish table
