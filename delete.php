@@ -6,7 +6,7 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 // sql to delete a record
-$sql = "DELETE FROM student WHERE stu_fname = '$stu_fname'";
+$sql = "DELETE FROM login WHERE username = '$testname'";
 
 if ($conn->query($sql) === TRUE) {
   echo "Record deleted successfully";

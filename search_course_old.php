@@ -1,8 +1,8 @@
 <html>
 <body>
+<link rel="stylesheet" href="uni.css">
 
-<center>
-   <h1> Search for courses </h1>
+
 <?php
 $testname = $_POST['testname'];	//get the data from the form
 $conn=mysqli_connect('localhost','root','','YAHUAS');
@@ -14,6 +14,9 @@ switch ($_POST['search_box']) {
        break;
    case 2:
       $sql="SELECT * FROM course WHERE course_title like '%$testname%'";
+      break;
+   case 3:
+      $sql="SELECT * FROM course WHERE course_instructor like '%$testname%'";
       break;
 }
 
@@ -27,29 +30,26 @@ if (!$rs)
 {
 	die("Could not get data ");
 }
+if ($row=mysqli_fetch_array($rs)) {		//if there is an output
+$course_title=$row['course_title'];
+$course_instructor=$row['course_instructor'];
+$room_no=$row['room_no'];
+echo ("<center>");
 
-echo ('<link rel="stylesheet" href="bitnami.css">');
-echo ("<table border='1'>");	//set up a table for the results
-echo ("<tr><td>Course No.</td>");
-echo ("<td>Course Title</td>");
-echo ("<td>Room No</td></tr>");
+echo ('<link rel="stylesheet" href="uni.css">');
+echo ("<h1>Course Details</h1>");
+echo ("<table>");	
+echo ("<tr><td><b>Name:</b></td><td>".$testname. "</td></tr>");
+echo("<br>");
+echo ("<tr><td><b>Title</b></td><td>".$course_title."</td></tr>");
+echo ("<tr><td><b>Instructor:</b></td><td>".$course_instructor."</td></tr>");
+echo ("<tr><td><b>Room:</b></td><td>".$room_no."</td></tr>");
+echo ("</table>"); 
+echo ("</center>");
 
-$found =0;
-
-while ($row=mysqli_fetch_assoc($rs))	//loop through all the records returned
-	{
-	$found=1;			//set variable because records found
-	$couse_no=$row['course_no'];
-	$course_title=$row['course_title'];
-   $room_no=$row['room_no'];
-	echo ("<tr><td>".$couse_no."</td>");      //put data in table
-   echo ("<td>".$course_title."</td>"); 
-  
-   echo ("<td>".$room_no."</td></tr>"); 
-	}
-echo ("</table>");			//finish table
-if ($found==0) {			//print message if no data found
-	echo ("None found");
+}
+else {							//if there is no output
+	echo ("<p>Name not found</p>");
 	}
 mysqli_close($conn);				//close connection to database
 ?>

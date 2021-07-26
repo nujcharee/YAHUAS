@@ -4,19 +4,26 @@
     </head>
 <?php
 
-$course_no  = $_REQUEST['course_no'];
-$course_title  = $_REQUEST['course_title'];
-$room_no  = $_REQUEST['room_no'];
+$staff_no  = $_REQUEST['staff_no'];
+$staff_title  = $_REQUEST['title'];
+$staff_fname  = $_REQUEST['staff_fname'];
+$staff_sname  = $_REQUEST['staff_sname'];
+$staff_gender = $_REQUEST['staff_gender'];
 
 
 $conn=mysqli_connect('localhost','root','','YAHUAS');
-$sql="INSERT INTO course (`course_no`
-, `course_title`
-, `room_no`) 
+$sql="INSERT INTO staff (`staff_no`
+, `title`
+, `staff_fname`
+, `staff_sname`
+, `staff_gender`) 
 
-VALUES ('$course_no'
-, '$course_title'
-, '$room_no')";
+VALUES ('$staff_no'
+, '$staff_title'
+, '$staff_fname'
+, '$staff_sname'
+, '$staff_gender')";
+
 if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";
   } else {
@@ -25,7 +32,6 @@ if ($conn->query($sql) === TRUE) {
   
   $conn->close();
 ?> 
-
 <center>
   <hr>
         Copyright &copy; YAHUAS || 

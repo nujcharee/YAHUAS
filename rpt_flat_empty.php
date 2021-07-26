@@ -2,22 +2,12 @@
 <body>
 
 <center>
-   <h1> Search for courses </h1>
+   <h1> Report: Vacant Flat Rooms</h1>
 <?php
-$testname = $_POST['testname'];	//get the data from the form
 $conn=mysqli_connect('localhost','root','','YAHUAS');
 
 
-switch ($_POST['search_box']) {
-   case 1:
-       $sql = "SELECT * FROM course WHERE course_no like '%$testname%'";
-       break;
-   case 2:
-      $sql="SELECT * FROM course WHERE course_title like '%$testname%'";
-      break;
-}
-
-// $sql="SELECT * FROM " .$sea course WHERE course_no like '$testname'"; 
+$sql="SELECT * FROM empty_flat"; 
 if (mysqli_connect_errno())
    {
    echo "Failed to connect to MySQL: " . mysqli_connect_error();
@@ -28,24 +18,29 @@ if (!$rs)
 	die("Could not get data ");
 }
 
-echo ('<link rel="stylesheet" href="bitnami.css">');
+
 echo ("<table border='1'>");	//set up a table for the results
-echo ("<tr><td>Course No.</td>");
-echo ("<td>Course Title</td>");
-echo ("<td>Room No</td></tr>");
+echo ("<tr><td>Room No.</td>");
+echo ("<td>Rent rate</td>");
+echo ("<td>Place No</td>");
+echo ("<td>Flat No.</td>");
+echo ("<td>Smoking Room</td></tr>");
 
 $found =0;
 
 while ($row=mysqli_fetch_assoc($rs))	//loop through all the records returned
 	{
 	$found=1;			//set variable because records found
-	$couse_no=$row['course_no'];
-	$course_title=$row['course_title'];
-   $room_no=$row['room_no'];
-	echo ("<tr><td>".$couse_no."</td>");      //put data in table
-   echo ("<td>".$course_title."</td>"); 
-  
-   echo ("<td>".$room_no."</td></tr>"); 
+	$room_no=$row['room_no'];
+	$month_rent_rate=$row['month_rent_rate'];
+	$place_no=$row['place_no'];
+    $smoking_room_yn=$row['smoking_room_yn'];
+   
+	echo ("<tr><td>".$room_no."</td>");      //put data in table
+   echo ("<td>".$month_rent_rate."</td>"); 
+   echo ("<td>".$place_no."</td>"); 
+   echo ("<td>".$smoking_room_yn."</td></tr>"); 
+
 	}
 echo ("</table>");			//finish table
 if ($found==0) {			//print message if no data found
