@@ -4,13 +4,14 @@
 <link rel="stylesheet" href="uni.css">
 </head>
 <center>
-<h1>Search for courses</h1>
+<h1>Search for students</h1>
 <body>
-<form id=”frm_course” method="POST" action="search_course.php">
+<form id=”frm_course” method="POST" action="search_student.php">
     <label for="search_box">Search Column: </label>
     <select id="search_box" name="search_box">
-      <option value="1">Course No.</option>
-      <option value="2">Course title</option>
+      <option value="1">Student No.</option>
+      <option value="2">Student Surname</option>
+      <option value="3">Status</option>
     </select>
     where contains
     <input type="text" id="testname" name="testname" />

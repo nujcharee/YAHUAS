@@ -1,19 +1,9 @@
 <html>
-    <head>
-            <script>
-                    function validateForm() {
-                      let x = document.forms["addStudent"]["fname"].value;
-                      if (x == "") {
-                        alert("Name must be filled out");
-                        return false;
-                      }
-                    }
-                    </script>
-                    </head>
-                    <body>
+    <head></head>
+<body>
 
 <link rel="stylesheet" href="uni.css">
-<form name="addStudent", method="post" action="add_record.php">
+<form name="addStudent", method="post" action="add_student.php">
 
 <center>
 <h2>Student details:</h2>
@@ -37,9 +27,13 @@
         </tr>
 
         <tr>
-                <th>Gender: </th>
-                <th><input type="radio" name="stu_gender" value="F">Female
-                <input type="radio" name="stu_gender" value="M">Male</th>
+            <th>Gender: </th>
+            <th><input type="radio" name="stu_gender" value="F">Female
+            <input type="radio" name="stu_gender" value="M">Male</th>
+        </tr>
+        <tr>
+          <th>Date of birth: </th>
+          <th><input type="date" name="dob"/></th>
         </tr>
         <tr>
                 <th>Category: </th>
@@ -50,22 +44,7 @@
 </select></th></tr>
 </table>
 <p></p>
-<h2>Student address:</h2>
 
-
-<table style="width:30%">
-        <tr>
-          <th>Address:</th>
-          <th><input type="text" name="stu_addr1" /></th>
-        </tr>
-        <tr>
-        <th>Postcode:</th>
-        <th><input type="text" name="stu_postcode" /></th>
-        </tr>
-        <th>Date of birth: </th>
-        <th><input type="date" name="dob"/></th>
-        </tr>
-</table>
 <p></p>
 <h2>Next of kin details:</h2>
 <table style="width:30%">
