@@ -3,6 +3,6 @@ CREATE TABLE IF NOT EXISTS `yahuas`.`address` (
   `addr1` VARCHAR(50) NULL,
   `postcode` VARCHAR(8) NOT NULL,
   `updated_by` VARCHAR(10) NOT NULL DEFAULT 'admin',
-  `updated` DATE NULL,
+  `updated` DATE NOT NULL,
   PRIMARY KEY (`address_id`))
 ENGINE = InnoDB
