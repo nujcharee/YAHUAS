@@ -1,9 +1,18 @@
 <html>
-    <head></head>
+    <head>
+            <script>function validateForm() {
+        let x = document.forms["addCourse"]["course_title"].value;
+        if (x == "") {
+          alert("Course title cannot be blank.");
+          return false;
+        }
+      }
+</script>
+      </head>
 <body>
 
 <link rel="stylesheet" href="uni.css">
-<form name="addCourse", method="post" action="add_courses.php">
+<form name="addCourse", method="post" onsubmit="return validateForm()", action="add_courses.php">
 
 <center>
 <h2>Add a new course:</h2>
@@ -11,7 +20,7 @@
 <table style="width:30%">
     <tr>
     <th>Course Number: </th>
-    <th><input type="text" name="course_no" /></th> 
+    <th><input type="text" name="course_no" maxlength="6"/></th> 
   </tr>
         <tr>
           <th>Course title:</th>
@@ -20,7 +29,7 @@
         
         <tr>
                 <th>Room Number: </th>
-                <th><input type="text" name="room_no" /></th>
+                <th><input type="text" name="room_no" maxlength="3"/></th>
                 </tr>
         <tr>
                 <th></th>

@@ -1,3 +1,9 @@
+<!DOCTYPE html> 
+<html>
+    <head><link rel="stylesheet" href="uni.css">
+    </head>
+<?php
+
 <?php
 $flat_no  = $_REQUEST['flat_no'];
 $address  = $_REQUEST['address'];
@@ -28,5 +34,9 @@ if ($conn->query($sql) === TRUE) {
   
   $conn->close();
 ?> 
-
+<center>
+<hr>
+    Copyright &copy; YAHUAS || 
+      <a href="main.html">Main Menu</a>|| <a href="logout.php?logout">Log-out</a>
+</center>
 

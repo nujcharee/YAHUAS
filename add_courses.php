@@ -26,11 +26,9 @@ if ($conn->query($sql) === TRUE) {
   $conn->close();
 ?> 
 
-<center>
-  <hr>
-        Copyright &copy; YAHUAS || 
-        <a href="logout.php?logout">Log-out</a>
-        
-        </div>
-    </center>
 
+<center>
+<hr>
+    Copyright &copy; YAHUAS || 
+      <a href="main.html">Main Menu</a>|| <a href="logout.php?logout">Log-out</a>
+</center>

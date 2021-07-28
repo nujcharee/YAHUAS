@@ -50,23 +50,6 @@ if ($found==0) {			//print message if no data found
 	}
 
 
-
-   $found1 =0;
-
-   while ($row1=mysqli_fetch_assoc($rs1))	//loop through all the records returned
-      {
-      $found1=1;			//set variable because records found
-      $LostIncome=$row1['LostIncome'];
-    
-      
-      echo ("<h3><b>£".$LostIncome."</b></h3>");      //put data in table
-      
-      }
-   
-   if ($found1==0) {			//print message if no data found
-      echo ("None found");
-      }
-
 mysqli_close($conn);				//close connection to database
 ?>
 <center>
