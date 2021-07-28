@@ -4,8 +4,6 @@ CREATE TABLE IF NOT EXISTS `yahuas`.`office` (
   `address` VARCHAR(100) NOT NULL,
   `postcode` VARCHAR(8) NOT NULL,
   `telno` VARCHAR(11) NOT NULL,
-  `updated_by` VARCHAR(10) NULL,
-  `updated` DATE NULL,
+  `updated_by` VARCHAR(10) NULL DEFAULT 'admin',
+  `updated` DATE NOT NULL DEFAULT CURRENT_DATE,
   PRIMARY KEY (`office_id`))
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8mb4
