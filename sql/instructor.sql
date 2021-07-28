@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS `mydb`.`instructor` (
+CREATE TABLE IF NOT EXISTS `yahuas`.`instructor` (
   `instructor_id` INT NOT NULL AUTO_INCREMENT,
   `instructor_fname` VARCHAR(30) NULL,
   `instructor_sname` VARCHAR(50) NULL,
@@ -9,7 +9,6 @@ CREATE TABLE IF NOT EXISTS `mydb`.`instructor` (
   INDEX `dept_id_idx` (`dept_id` ASC) VISIBLE,
   CONSTRAINT `dept_id`
     FOREIGN KEY (`dept_id`)
-    REFERENCES `mydb`.`department` (`dept_id`)
+    REFERENCES `yahuas`.`department` (`dept_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB
