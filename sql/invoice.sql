@@ -13,5 +13,3 @@ CREATE TABLE IF NOT EXISTS `yahuas`.`invoice` (
     REFERENCES `yahuas`.`lease` (`lease_no`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8mb4
