@@ -11,7 +11,7 @@ CREATE TABLE IF NOT EXISTS `yahuas`.`course` (
   INDEX `instructor_id_idx` (`instructor_id` ASC) VISIBLE,
   CONSTRAINT `instructor_id`
     FOREIGN KEY (`instructor_id`)
-    REFERENCES `mydb`.`instructor` (`instructor_id`)
+    REFERENCES `yahuas`.`instructor` (`instructor_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 
