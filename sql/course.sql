@@ -14,5 +14,4 @@ CREATE TABLE IF NOT EXISTS `yahuas`.`course` (
     REFERENCES `mydb`.`instructor` (`instructor_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8mb4
+
