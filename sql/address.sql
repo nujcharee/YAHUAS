@@ -5,4 +5,3 @@ CREATE TABLE IF NOT EXISTS `yahuas`.`address` (
   `updated_by` VARCHAR(10) NOT NULL DEFAULT 'admin',
   `updated` DATE NOT NULL,
   PRIMARY KEY (`address_id`))
-ENGINE = InnoDB
